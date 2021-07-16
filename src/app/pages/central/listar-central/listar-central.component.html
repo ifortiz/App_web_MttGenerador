@@ -1,0 +1,41 @@
+<div class="container">
+    <button (click)="Listar()" class="btn btn-primary" style="width: 20%; margin-left: 100px;">listar</button> -->
+   <button (click)="Nuevo()" class="btn btn-primary" style="width: 20%; margin-left: 100px;">Nuevo</button>
+   </div>
+
+   <div class="form-group">
+    <input type="text" class="form-control" placeholder="Buscar Central" [(ngModel)]="filterTerm">
+</div>
+
+       <div class="card-header">
+           <h3 class="color text-white">Centrales</h3>
+           <!-- <button (click)="Nuevo()" class="btn btn-sm btn-block btn-primary" style="margin-left: 10px;">Nuevo</button> -->
+       </div>
+       <div class="card-body">
+           <table class="table table-hover bg-white">
+           <thead>
+               <tr>
+                   <th>ID</th>
+                   <th>NOMBRE</th>
+                   <th>UNIDAD DE NEGOCIO</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr *ngFor="let central of centrals | filter:filterTerm" class="text-center">
+                   <td>{{central.id}}</td>
+                   <td>{{central.nombre}}</td>
+                   <td>{{central.unidadnegocio?.nombre}}</td>
+                   <td>
+                       <button (click)="updateCentral(central.id)" class="btn btn-warning" style= "margin-left: 10px;">Editar</button>
+                       <button (click)="openModal(central.id)" class="btn btn-danger" style= "margin-left: 10px;">Eliminar</button>
+                   </td>
+               </tr>
+           </tbody>
+       </table>
+       </div>
+
+       <app-modal [name]="nameModal" [numModal]="numModal" (eventEmit)="responseModal($event)"></app-modal>
+
+
+
+

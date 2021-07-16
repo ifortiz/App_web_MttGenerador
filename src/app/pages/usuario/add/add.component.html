@@ -1,0 +1,30 @@
+<div class="container col-md-6">
+<div class="card">
+  <div class="card-header">
+    Registrar Usuario
+  </div>
+  <div class="card-body">
+   <form action="">
+      <div class="form-group">
+        <label for="">Nombre</label>
+        <input [(ngModel)]="usuario.nombre" name="nombre" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Apellido</label>
+        <input [(ngModel)]="usuario.apellido" name="apellido" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Correo</label>
+        <input [(ngModel)]="usuario.correo" name="correo" type="text" class="form-control">
+       </div>
+       <div class="form-group">
+        <label for="">password</label>
+        <input [(ngModel)]="usuario.password" name="correo" type="text" class="form-control">
+       </div>
+      <button (click)="Guardar()" class="btn btn-primary">Guardar</button>
+   </form>
+  </div>
+</div>
+</div>
+
+<app-modal [name]="nameModal" [numModal]="numModal" (eventEmit)="responseModal($event)"></app-modal>

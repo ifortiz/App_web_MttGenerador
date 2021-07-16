@@ -1,0 +1,55 @@
+<div class="container">
+    <button (click)="Listar()" class="btn btn-primary" style="width: 20%; margin-left: 100px;">Listar</button> -->
+   <button (click)="Nuevo()" class="btn btn-primary" style="width: 20%; margin-left: 100px;">Nuevo</button>
+   </div>
+
+   <div class="form-group">
+    <input type="text" class="form-control" placeholder="Buscar Equipo" [(ngModel)]="filterTerm">
+</div>
+
+       <div class="card-header">
+           <h3 class="color text-white">EQUIPOS</h3>
+           <!-- <button (click)="Nuevo()" class="btn btn-sm btn-block btn-primary" style="margin-left: 10px;">Nuevo</button> -->
+       </div>
+       <div class="card-body">
+           <table class="table table-hover bg-white">
+           <thead>
+               <tr>
+                   <th>IDCOD</th>
+                   <th>DESCRIPCION</th>
+                   <th>POTENCIA</th>
+                   <th>MODELO</th>
+                   <th>CORRIENTENOM</th>
+                   <th>SERIE</th>
+                   <th>TIPO</th>
+                   <th>VOLTAJE</th>
+                   <th>SISTEMA</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr *ngFor="let equipo of equipos | filter:filterTerm" class="text-center">
+                   <td>{{equipo.idcod}}</td>
+                   <td>{{equipo.descripcion}}</td>
+                   <td>{{equipo.potencia}}</td>
+                   <td>{{equipo.modelo}}</td>
+                   <td>{{equipo.corrientenom}}</td>
+                   <td>{{equipo.serie}}</td>
+                   <td>{{equipo.tipo}}</td>
+                   <td>{{equipo.voltaje}}</td>
+                   <td>{{equipo.sistema?.nombre}}</td>
+                   <td>
+                    <button (click)="updateEquipo(equipo.idcod)" class="btn btn-warning" style= "margin-left: 10px;">Editar</button>
+                    <button (click)="openModal(equipo.idcod)" class="btn btn-danger" style= "margin-left: 10px;">Eliminar</button>
+                </td>
+               </tr>
+           </tbody>
+       </table>
+       </div>
+
+       <app-modal [name]="nameModal" [numModal]="numModal" (eventEmit)="responseModal($event)"></app-modal>
+
+
+
+
+
+

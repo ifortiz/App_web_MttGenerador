@@ -1,0 +1,32 @@
+<div class="modal-dialog text-center">
+    <div class="col-sm-8 main-section">
+        <div class="modal-content">
+            <div class="col-12 user-img">
+                <img src="./assets/img/MttGenerador.jpeg" th:src="@{/img/user.png}"/>
+            </div>
+            <!-- <form class="col-12" th:action="@{/login}" method="get"> -->
+                <div class="form-group" id="user-group">
+                    <input type="text" class="form-control" placeholder="Correo" [(ngModel)]="correo"/>
+                </div>
+                <div class="form-group" id="contrasena-group">
+                    <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="password"/>
+                </div>
+                <button type="submit" class="btn btn-primary" 
+                (click)="login()"
+                 routerLinkActive="active"
+                ><i class="fas fa-sign-in-alt"></i>  Ingresar </button>
+            <!-- </form> -->
+            <div class="col-12 forgot">
+                <a href="#">Recordar contraseña?</a>
+            </div>
+            <div  *ngIf="isLogued==1" class="alert alert-danger" role="alert">
+                Contraseña y usuario invalidos.
+            </div>
+            <div *ngIf="isLogued==2" class="alert alert-success" role="alert">
+                Has ingresado correctamente.
+            </div>
+        </div>
+    </div>
+</div>
+
+

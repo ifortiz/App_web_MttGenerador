@@ -1,0 +1,41 @@
+<div class="container">
+    <button (click)="Listar()" class="btn btn-primary" style="width: 20%; margin-left: 100px;">listar</button> -->
+   <button (click)="Nuevo()" class="btn btn-primary" style="width: 20%; margin-left: 100px;">Nuevo</button>
+   </div>
+
+   <div class="form-group">
+    <input type="text" class="form-control" placeholder="Buscar Equipo de medicion" [(ngModel)]="filterTerm">
+</div>
+
+       <div class="card-header">
+           <h3 class="color text-white">Equipos de medicion</h3>
+           <!-- <button (click)="Nuevo()" class="btn btn-sm btn-block btn-primary" style="margin-left: 10px;">Nuevo</button> -->
+       </div>
+       <div class="card-body">
+           <table class="table table-hover bg-white">
+           <thead>
+               <tr>
+                   <th>ID</th>
+                   <th>MARCA</th>
+                   <th>MODELO</th>
+                   <th>TIPO</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr *ngFor="let medicion of medicion | filter:filterTerm" class="text-center">
+                   <td>{{medicion.id}}</td>
+                   <td>{{medicion.marca}}</td>
+                   <td>{{medicion.modelo}}</td>
+                   <td>{{medicion.tipo}}</td>
+                   <td>
+                       <button (click)="updateMedicion(medicion.id)" class="btn btn-warning" style= "margin-left: 10px;">Editar</button>
+                       <button (click)="deleteMedicion(medicion.id)" class="btn btn-danger" style= "margin-left: 10px;">Eliminar</button>
+                   </td>
+               </tr>
+           </tbody>
+       </table>
+       </div>
+
+
+
+

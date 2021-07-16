@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark" id="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="assets/img/MttGenerador.png" alt="" width="120">
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <!-- <li class="nav-item"><a class="nav-link active" aria-current="page" href="" routerLink="/ingresar" >Inicio</a></li> -->
+                <li  class="nav-item"><a class="nav-link" href="" routerLink="/ingresar" routerLinkActive="active">Login</a></li>
+                <li *ngIf="isEnabled" class="nav-item"><a class="nav-link" href="" routerLink="/modulos" routerLinkActive="active">Modulos</a></li>
+                <li *ngIf="isEnabled" class="nav-item"><a class="nav-link" style="
+                    padding-left: 500px;
+                "href="" (click)="salir()" >LogOut</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

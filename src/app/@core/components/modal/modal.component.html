@@ -1,0 +1,54 @@
+
+
+<ngx-smart-modal customClass='nsm-dialog-animation-ttb nsm-centered' [identifier]="name"
+        [closable]="false" [dismissable]="false" [escapable]="false">
+
+    <div class="container-modal">
+
+        <div [ngSwitch]="numModal">
+
+            <div *ngSwitchCase="1">
+                <h1>MENSAJE</h1>
+                <p>Registro guardado con exito...</p>
+        
+               <!--  <button (click)="modal.getModal(name).close()">CERRAR</button> -->
+                <button (click)="eventEmit.emit('Guardar Registro')">OK</button>
+            </div>
+
+            <div *ngSwitchCase="2">
+                <h1>MENSAJE</h1>
+                <p>Esta seguro de eliminar?</p>
+        
+                <button (click)="modal.getModal(name).close()">NO</button>
+                <button (click)="eventEmit.emit('ELIMINAR')">SI</button>
+            </div>
+
+            <div *ngSwitchCase="3">
+                <h1>MENSAJE</h1>
+                <p>¡Registro actualizado correctamente!</p>
+        
+                <button (click)="eventEmit.emit('DALO MISMO EL CONTENIDO')">ACEPTAR</button>
+            </div>
+
+            <div *ngSwitchCase="4">
+                <h1>MENSAJE</h1>
+                <p>¡ESTO ES DE PRUEBA!</p>
+        
+                <button (click)="eventEmit.emit('CALCULAR')">CALCULAR</button>
+                <button (click)="eventEmit.emit('ELIMINAR')">ELIMINAR</button>
+            </div>
+
+            <div *ngSwitchCase="5">
+                <h1>MENSAJE</h1>
+                <p>¡Usuario y contraseña ingresados correctamente!</p>
+        
+                <button (click)="eventEmit.emit('ACEPTAR')">ACEPTAR</button>
+                <button (click)="eventEmit.emit('ELIMINAR')">ELIMINAR</button>
+            </div>
+
+        </div>
+    </div>
+</ngx-smart-modal>
+
+
+

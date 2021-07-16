@@ -1,0 +1,35 @@
+<div class="container">
+      
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Buscar Orden de trabajo" [(ngModel)]="filterTerm">
+        </div>
+    
+       </div>
+           <div class="card-body">
+               <table class="table table-hover bg-white">
+               <thead>
+                   <tr>
+                       <th>OT</th>
+                       <th>RESPONSABLE</th>
+                       <th>FECHA DE CREACION</th>
+                      <th> <button (click)="Salir()" class="btn btn-primary" style= "margin-left: 10px;">Salir</button> </th>
+
+    
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr *ngFor="let actividad of actividades | filter:filterTerm" class="text-center">
+                       <td>{{actividad.equipogeneral?.ot}}</td>
+                       <td>{{actividad.equipogeneral?.usuario.nombre}}</td>
+                       <td>{{actividad.fcreacion | date:'medium'}}</td> 
+                   <td>
+                        <button (click)="viewActividad(actividad.equipogeneral.ot)" class="btn btn-warning" style= "margin-left: 10px;">Visualizar</button>
+                        
+                   </tr>
+               </tbody>
+           </table>
+           </div>
+
+
+  
+

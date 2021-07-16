@@ -1,0 +1,17 @@
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-header">
+      Ingresar Sistema
+    </div>
+    <div class="card-body">
+     <form action="">
+        <div class="form-group">
+          <label for="">Nombre</label>
+          <input [(ngModel)]="sistema.nombre" name="nombre" type="text" class="form-control">
+        </div>          
+        <button (click)="Guardar()" class="btn btn-primary">Guardar</button>
+     </form>
+    </div>
+</div>
+
+<app-modal [name]="nameModal" [numModal]="numModal" (eventEmit)="responseModal($event)"></app-modal>

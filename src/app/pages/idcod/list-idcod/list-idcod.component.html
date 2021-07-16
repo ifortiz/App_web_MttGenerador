@@ -1,0 +1,102 @@
+<div class="container col-md-2"> 
+    <button (click)="Salir()" class="btn btn-primary" style= "margin-left: 10px;">Salir</button> 
+</div>
+
+<div class="container col-md-6">
+    <div class="card" style="
+    margin-top: 50px;
+">
+
+        <div class="form-group">   
+ 
+        <label for="sistem">CONSULTAR EQUIPO</label>
+
+<!--         <div>
+            <input type="text" class="form-control" placeholder="Buscar por codigo o nombre del equipo" [(ngModel)]="filterTerm">
+         </div> -->
+
+               <select id="sistem" [(ngModel)]="equipoId" name="sistem" class="form-control" data-live-search="true">
+                  <option *ngFor="let equipo of equipos" [value]="equipo.idcod" data-live-search="true">
+                    {{equipo.idcod}} - {{equipo.descripcion}}
+                  </option>
+        </select>
+      </div>
+          <button (click)="Consultar() " class="btn btn-primary">Consultar</button>
+      </div>
+  </div>
+
+  <!-- Filtro por equipo-->
+
+<!--   <div class="container">
+    <div class="form-group" style="
+    margin-top: 50px;
+ ">
+     <input type="text" class="form-control" placeholder="Buscar por codigo o nombre del equipo" [(ngModel)]="filterTerm">
+ </div>
+ 
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+            <table class="table table-hover bg-white">
+            <thead>
+                <tr>
+                    <th>CODIGO DE EQUIPO</th>
+                    <th>NOMBRE DEL EQUIPO</th>
+                    <th>
+                        CONSULTAR
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let equipo of equipos | filter:filterTerm" class="text-center">
+                    <td>{{equipo.idcod}}</td>
+                    <td>{{equipo.descripcion}}</td>
+                    <td>
+                        <button (click)="Consultar() " class="btn btn-primary">Consultar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+       </div> -->
+
+   <!-- Filtro por equipo-->
+
+
+
+<div class="container">
+   <div class="form-group" style="
+   margin-top: 50px;
+">
+    <input type="text" class="form-control" placeholder="Buscar por fecha u orden de trabajo" [(ngModel)]="filterTerm">
+</div>
+
+       <div class="card-header">
+           <h3 class="color text-white">Reporte de equipo</h3>
+       </div>
+       <div class="card-body">
+           <table class="table table-hover bg-white">
+           <thead>
+               <tr>
+                   <th>ORDEN DE TRABAJO</th>
+                   <th>FECHA</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr *ngFor="let actividad of actividades | filter:filterTerm" class="text-center">
+                   <td>{{actividad.equipogeneral?.ot}}</td>
+                   <td>{{actividad.fcreacion | date:'medium'}}</td>
+                   <td>
+                       <button  (click)="viewActividad(actividad.equipogeneral.ot)" class="btn btn-warning" style= "margin-left: 10px;">Visualizar</button>
+                   </td>
+               </tr>
+           </tbody>
+       </table>
+       </div>
+      </div>
+  <app-modal [name]="nameModal" [numModal]="numModal" (eventEmit)="responseModal($event)"></app-modal>
+  
+
+  
+
+

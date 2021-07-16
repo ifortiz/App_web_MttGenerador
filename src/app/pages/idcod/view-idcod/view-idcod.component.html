@@ -1,0 +1,99 @@
+<div class="container col-md-8">
+    <div class="card">
+      <div class="card-header">
+        REPORTE DE MANTENIMIENTO
+      </div>
+      <label for="" style="font-weight: bold;">EQUIPO</label>
+      <div class="form-group">
+        <label for="" class="ml-6 col-md-2">DETALLE:</label>
+        <label class="ml-5">{{equipo.descripcion}}</label>
+        <!-- <input [(ngModel)]="equipo.descripcion" name="descripcion" type="text" class=" ml-5"> -->
+      </div> 
+      <div class="form-group">
+        <label for="" class="ml-6 col-md-2">CODIGO:</label>
+        <label class="ml-5">{{equipo.idcod}}</label>
+        <!-- <input [(ngModel)]="equipo.idcod" name="idcod" type="text" class=" ml-5"> -->
+      </div>
+      <div class="form-group">
+        <label for="" class="ml-6 col-md-2">POTENCIA:</label>
+        <label class="ml-5">{{equipo.potencia}}</label>
+        <!-- <input [(ngModel)]="equipo.potencia" name="potencia" type="text" class=" ml-5"> -->
+      </div> 
+      <div class="form-group">
+          <label for="" class="ml-6 col-md-2">MODELO:</label>
+          <label class="ml-5">{{equipo.modelo}}</label>
+        <!-- <input [(ngModel)]="equipo.modelo" name="modelo" type="text" class=" ml-5"> -->
+      </div>
+      <div class="form-group">
+        <label for="" class="ml-6 col-md-2">SERIE:</label>
+        <label class="ml-5">{{equipo.serie}}</label>
+        <!-- <input [(ngModel)]="equipo.serie" name="serie" type="text" class=" ml-5"> -->
+      </div> 
+      <div class="form-group">
+        <label for="" class="ml-6 col-md-2">CORRIENTE:</label>
+        <label class="ml-5">{{equipo.corrientenom}}</label>
+        <!-- <input [(ngModel)]="equipo.corrientenom"  name="corrientenom" type="text" class=" ml-5"> -->
+      </div>
+      <div class="form-group">
+        <label for="" class="ml-6 col-md-2">TIPO:</label>
+        <label class="ml-5">{{equipo.tipo}}</label>
+        <!-- <input [(ngModel)]="equipo.tipo" name="tipo" type="text" class=" ml-5"> -->
+      </div> 
+      <div class="form-group">
+        <label for="" class="ml-6 col-md-2">VOLTAJE:</label>
+        <label class="ml-5">{{equipo.voltaje}}</label>
+        <!-- <input [(ngModel)]="equipo.voltaje" name="voltaje" type="text" class=" ml-5"> -->
+      </div>
+
+      <div class="card-body">
+       <form (ngSubmit)="onSubmit()"action="">
+        <div class="form-group">
+          <label for="">FECHA DE REPORTE</label>
+          <label class="ml-5">{{fechaActividad | date:'medium'}}</label>
+          <!-- <input [(ngModel)]="fechaActividad" name="fcreacion" type="text" class=" ml-5"> -->
+        </div>     
+ <div class="form-group">
+            <label for="">RESPONSABLE</label>
+            <label class="ml-5">{{equipogeneral.usuario.nombre}}</label>
+            <!-- <input [(ngModel)]="equipogeneral.usuario.nombre" name="nombre" type="text" class=" ml-5"> -->
+          </div>     
+          <div class="form-group">
+            <label for="">OT</label>
+            <label class="ml-5">{{equipogeneral.ot}}</label>
+            <!-- <input [(ngModel)]="equipogeneral.ot" name="potencia" type="text" class=" ml-5"> -->
+          </div> 
+ 
+          <div class="form-group">
+            <label for="">1.- ACTIVIDADES REALIZADAS</label>
+            <ul>
+              <li class="ml-5" *ngFor="let detalle of actividades">
+                <a>{{detalle.numeroAct}} - {{detalle.descripcion}}</a>
+                  <div *ngFor="let detAct of detalle.detalleactividad">
+                    <a>{{detAct.nomprueba}}</a>
+                    <a style="margin-left: 50px">{{detAct.valorprueba}}</a>
+                  </div>
+               </li>
+            </ul>           
+          </div> 
+
+          <div class="form-group">
+            <label for="">2.- MODIFICACIONES O PARTES CAMBIADAS</label>
+            <label class="ml-5">{{equipogeneral.reporte.modificacion}}</label>
+            <!-- <input [(ngModel)]="equipogeneral.reporte.modificacion" name="modificacion" type="text" class=" ml-5" > -->
+          </div> 
+          <div class="form-group">   
+            <label for="">3.- CONDICION DEL OBJETO DE MANTENIMIENTO</label>
+            <label class="ml-5">{{equipogeneral.reporte.condicion}}</label>
+            <!-- <input [(ngModel)]="equipogeneral.reporte.condicion" name="condicion" type="text" class=" ml-5"> -->
+          </div> 
+          <div class="form-group">   
+            <label for="">4.- PENDIENTES</label>
+            <label class="ml-5">{{equipogeneral.reporte.pendiente}}</label>
+            <!-- <input [(ngModel)]="equipogeneral.reporte.pendiente" name="pendiente" type="text" class="ml-5"> -->
+          </div>  
+  
+        
+          <button (click)="Salir()" class="btn btn-primary">Salir</button>
+       </form>
+      </div>
+  </div>

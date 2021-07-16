@@ -1,0 +1,18 @@
+<div class="container col-md-6">
+    <div class="card">
+      <div class="card-header">
+        Registrar Unidad de Negocio
+      </div>
+      <div class="card-body">
+       <form action="">
+          <div class="form-group">
+            <label for="">Nombre</label>
+            <input [(ngModel)]="unidadnegocio.nombre" name="nombre" type="text" class="form-control">
+          </div>          
+          <button (click)="Guardar()" class="btn btn-primary">Guardar</button>
+       </form>
+      </div>
+</div>
+
+<app-modal [name]="nameModal" [numModal]="numModal" (eventEmit)="responseModal($event)"></app-modal>
+

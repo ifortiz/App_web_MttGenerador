@@ -1,0 +1,69 @@
+<div class="container productos  mt-4">
+    <h2 class="text-center text-white">MODULOS</h2>
+    <div class="row mt-4 justify-content-center">
+      <div [hidden]="isAdmin!='ADMINISTRADOR'" class="col-md-6 col-lg-4 mb-4 mb-md-4"> <img src="assets/img/Usuarios.png" class="img-fluid mx-auto d-block" width="100">
+        <div class="info-producto bg-dark text-center text-light">
+          <h3 class="text-center mb-2">USUARIOS</h3>
+          <p>Crear, editar, eliminar usuarios de la aplicacion movil y web</p>
+          <a href="" class="btn btn-primary mb-2 btn-lg text-uppercase font-weight-bold" href="#" routerLink="/usuarios" routerLinkActive="active">Ingresar</a>
+        </div>
+      </div>
+      <div [hidden]="isAdmin!='ADMINISTRADOR'" class="col-md-6 col-lg-4 mb-4 mb-md-4">
+        <img src="assets/img/Sistemas.png" class="img-fluid mx-auto d-block" width="100">
+        <div class="info-producto bg-dark text-center text-light">
+          <h3 class="text-center mb-2">SISTEMAS</h3>
+          <p>Crear, editar, eliminar sistemas tales como anillos rozantes, generador, etc.</p>
+          <a href="" class="btn btn-primary mb-2 btn-lg text-uppercase font-weight-bold" href="#" routerLink="/list-sistema" routerLinkActive="active">Ingresar</a>
+        </div>
+      </div>
+      <div [hidden]="isAdmin!='ADMINISTRADOR'" class="col-md-6 col-lg-4 mb-4 mb-md-4">
+        <img src="assets/img/Equipos.png" class="img-fluid mx-auto d-block" width="100">
+        <div class="info-producto bg-dark text-center text-light">
+          <h3 class="text-center mb-2">EQUIPOS</h3>
+          <p>Crear, editar, eliminar equipos tales como motores, transformadores etc.</p>
+          <a href="" class="btn btn-primary mb-2 btn-lg text-uppercase font-weight-bold" href="#" routerLink="/list-equipo" routerLinkActive="active">Ingresar</a>
+        </div>
+      </div>
+      <div   class="col-md-6 col-lg-4 mb-4 mb-md-4">
+        <img src="assets/img/Reportes.png" class="img-fluid mx-auto d-block" width="100">
+        <div class="info-producto bg-dark text-center text-light">
+          <h3 class="text-center mb-2">REPORTES</h3>
+          <p> Visualizar, editar, eliminar los reportes generados en la aplicación movil</p>
+          <a href="" class="btn btn-primary mb-2 btn-lg text-uppercase font-weight-bold" href="#" routerLink="/reportes" routerLinkActive="active">Ingresar</a>
+        </div>
+      </div>
+      <div [hidden]="isAdmin!='ADMINISTRADOR'" class="col-md-6 col-lg-4 mb-4 mb-md-4">
+        <img src="assets/img/Centrales.png" class="img-fluid mx-auto d-block" width="100">
+        <div class="info-producto bg-dark text-center text-light">
+          <h3 class="text-center mb-2">CENTRALES</h3>
+          <p> Ingresar centrales para el cumplimiento de la orden de trabajo</p>
+          <a href="" class="btn btn-primary mb-2 btn-lg text-uppercase font-weight-bold" href="#" routerLink="/list-central" routerLinkActive="active">Ingresar</a>
+        </div>
+      </div>
+      <div [hidden]="isAdmin!='ADMINISTRADOR'" class="col-md-6 col-lg-4 mb-4 mb-md-4">
+        <img src="assets/img/Negocio.png" class="img-fluid mx-auto d-block" width="100">
+        <div class="info-producto bg-dark text-center text-light">
+          <h3 class="text-center mb-2">UNIDAD DE NEGOCIO</h3>
+          <p> Ingresar centrales para el cumplimiento de la orden de trabajo</p>
+          <a href="" class="btn btn-primary mb-2 btn-lg text-uppercase font-weight-bold" href="#" routerLink="/list-unidadnegocio" routerLinkActive="active">Ingresar</a>
+        </div>
+      </div> 
+      <div [hidden]="isAdmin!='ADMINISTRADOR'" class="col-md-6 col-lg-4 mb-4 mb-md-4">
+        <img src="assets/img/Medicion.png" class="img-fluid mx-auto d-block" width="100">
+        <div class="info-producto bg-dark text-center text-light">
+          <h3 class="text-center mb-2">EQUIPOS DE MEDICION</h3>
+          <p>Ingresar equipos necesarios para la medicion de voltajes, corriente, potencia</p>
+          <a href="" class="btn btn-primary mb-2 btn-lg text-uppercase font-weight-bold" href="#" routerLink="/list-medicion" routerLinkActive="active">Ingresar</a>
+        </div>
+      </div>
+      <div  [hidden]="isAdmin!='ADMINISTRADOR'" class="col-md-6 col-lg-4 mb-4 mb-md-4">
+        <img src="assets/img/Unidades.png" class="img-fluid mx-auto d-block" width="100">
+        <div class="info-producto bg-dark text-center text-light">
+          <h3 class="text-center mb-2">UNIDADES</h3>
+          <p>Ingresar unidades correspondientes a las centrales</p>
+          <a href="" class="btn btn-primary mb-2 btn-lg text-uppercase font-weight-bold" href="#" routerLink="/list-unidad" routerLinkActive="active">Ingresar</a>
+        </div>
+      </div>
+    </div>
+</div>
+

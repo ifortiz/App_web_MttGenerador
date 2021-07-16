@@ -1,0 +1,57 @@
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-header">
+      Ingresar Equipo
+    </div>
+    <div class="card-body">
+     <form (ngSubmit)="onSubmit()"action="">
+      <div class="form-group">
+        <label for="">Idcodigo</label>
+        <input [(ngModel)]="equipo.idcod" name="idcod" type="text" class="form-control">
+      </div>     
+        <div class="form-group">
+          <label for="">Descripcion</label>
+          <input [(ngModel)]="equipo.descripcion" name="descripcion" type="text" class="form-control">
+        </div>     
+        <div class="form-group">
+          <label for="">Potencia</label>
+          <input [(ngModel)]="equipo.potencia" name="potencia" type="text" class="form-control">
+        </div> 
+        <div class="form-group">
+          <label for="">Modelo</label>
+          <input [(ngModel)]="equipo.modelo" name="modelo" type="text" class="form-control">
+        </div> 
+        <div class="form-group">
+          <label for="">Corriente Nominal</label>
+          <input [(ngModel)]="equipo.corrientenom" name="corrientenom" type="text" class="form-control">
+        </div> 
+        <div class="form-group">
+          <label for="">Serie</label>
+          <input [(ngModel)]="equipo.serie" name="serie" type="text" class="form-control">
+        </div> 
+        <div class="form-group">
+          <label for="">Tipo</label>
+          <input [(ngModel)]="equipo.tipo" name="tipo" type="text" class="form-control">
+        </div> 
+        <div class="form-group">   
+          <label for="">Voltaje</label>
+          <input [(ngModel)]="equipo.voltaje" name="voltaje" type="text" class="form-control">
+        </div> 
+
+        <div class="form-group">      
+          <label for="sistem">SISTEMA</label>
+          <select id="sistem" [(ngModel)]="sistemaId" name="sistem" class="form-control">
+                    <option *ngFor="let sistema of sistemas" [value]="sistema.id">
+                      {{sistema.nombre}}
+                    </option>
+          </select>
+        </div>
+       
+        <button (click)="Guardar()" class="btn btn-primary">Guardar</button>
+     </form>
+    </div>
+</div>
+
+<app-modal [name]="nameModal" [numModal]="numModal" (eventEmit)="responseModal($event)"></app-modal>
+
+<!-- <app-modal [name]="nameModal" [numModal]="numModal" (eventEmit)="gotoList()"></app-modal> -->
